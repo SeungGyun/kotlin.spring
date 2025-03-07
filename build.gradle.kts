@@ -30,9 +30,11 @@ dependencies {
 	implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
 
-	// ✅ R2DBC - MySQL 최신 드라이버 (MariaDB R2DBC 사용)
+	// ✅ R2DBC
 	implementation("org.springframework.boot:spring-boot-starter-data-r2dbc")
-	implementation("org.mariadb:r2dbc-mariadb:1.1.4") // 최신 R2DBC MySQL 드라이버
+	implementation("io.asyncer:r2dbc-mysql:1.0.2")
+	implementation("io.r2dbc:r2dbc-pool:1.0.1.RELEASE")
+	implementation("io.r2dbc:r2dbc-proxy:1.1.2.RELEASE")
 
 	// ✅ 로깅 지원
 	implementation("io.github.microutils:kotlin-logging:2.1.21")

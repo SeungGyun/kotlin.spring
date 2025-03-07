@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: kotlin.spring
+  r2dbc:
+    url: r2dbc:mariadb://localhost:62222/ngp_web?allowPublicKeyRetrieval=true
+    username: pp
+    password: ppw
+    pool:
+      name: "r2dbcPool"
+      max-size: 10
+      initial-size: 2
+      validation-query: "SELECT 1"
+  logging:
+    level:
+      org.springframework.r2dbc.core: WARN

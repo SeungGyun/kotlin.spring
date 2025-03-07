@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- 콘솔 로그 포맷 -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                %d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <!-- ✅ SQL 로그 전용 설정 (더 깔끔한 포맷 적용) -->
+    <logger name="org.springframework.r2dbc.core" level="DEBUG" additivity="false">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+
+    <!-- 불필요한 SQL 드라이버 로그 제거 -->
+    <logger name="io.r2dbc.mysql" level="INFO"/>
+    <logger name="io.r2dbc.mariadb" level="INFO"/>
+    <logger name="io.asyncer.r2dbc.mysql" level="INFO"/>
+    <logger name="org.springframework.data.r2dbc" level="INFO"/>
+    <logger name="reactor.netty.http.client" level="WARN"/>
+    <logger name="org.springframework.r2dbc.core.DefaultDatabaseClient" level="WARN"/>
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+</configuration>
