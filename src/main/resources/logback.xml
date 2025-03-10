@@ -16,13 +16,15 @@
     </logger>
 
     <!-- 불필요한 SQL 드라이버 로그 제거 -->
+
+    <logger name="org.springframework.boot" level="INFO"/>
     <logger name="io.r2dbc.mysql" level="INFO"/>
     <logger name="io.r2dbc.mariadb" level="INFO"/>
     <logger name="io.asyncer.r2dbc.mysql" level="INFO"/>
     <logger name="org.springframework.data.r2dbc" level="INFO"/>
     <logger name="reactor.netty.http.client" level="WARN"/>
     <logger name="org.springframework.r2dbc.core.DefaultDatabaseClient" level="WARN"/>
-    <root level="INFO">
+    <root level="DEBUG">
         <appender-ref ref="STDOUT"/>
     </root>
 

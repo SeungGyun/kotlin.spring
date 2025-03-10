@@ -1,0 +1,13 @@
+###
+#curl -X GET "http://localhost:8080/redis/get?key=test"
+GET http://localhost:8080/redis/get?key=test
+
+###
+
+# curl -X POST "http://localhost:8080/redis/set?key=test&value=hello"
+POST http://localhost:8080/redis/set?key=test&value=hssss
+
+###
+
+
+

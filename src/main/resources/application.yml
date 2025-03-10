@@ -13,3 +13,17 @@ spring:
   logging:
     level:
       org.springframework.r2dbc.core: WARN
+  redis:
+    mode: sentinel  # sentinel 또는 cluster 선택 가능
+    password: test
+    sentinel:
+      master: mymaster
+      nodes: 172.1.1.1:11001,172.1.1.1:11002,172.1.1.1:11003
+    cluster:
+      nodes: 172.1.1.1:6300,1.1.1.175:6301,172.1.1.1:6302,172.1.1.1:6400,172.1.1.1:6401,172.1.1.1:6402
+    lettuce:
+      pool:
+        max-active: 10
+        max-idle: 10
+        min-idle: 2
+
